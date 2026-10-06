@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinancApp</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="telaAuth">
+      <h1>FinancApp</h1>
+
+      <form id="formCadastro" hidden>
+        <h2>Criar conta</h2>
+        <input id="cadNome" type="text" placeholder="Nome" />
+        <input id="cadTurma" type="text" placeholder="Turma" />
+        <input id="cadUsuario" type="text" placeholder="Usuário" />
+        <input id="cadSenha" type="password" placeholder="Senha" />
+        <button type="submit">Cadastrar</button>
+        <p id="cadMsg"></p>
+        <button id="btnMostrarLogin" class="auth-toggle" type="button">Já tem conta? Entrar</button>
+      </form>
+
+      <form id="formLogin">
+        <h2>Login</h2>
+        <input id="loginUsuario" type="text" placeholder="Usuário" />
+        <input id="loginSenha" type="password" placeholder="Senha" />
+        <button type="submit">Entrar</button>
+        <p id="loginMsg"></p>
+        <button id="btnMostrarCadastro" class="auth-toggle" type="button">Criar conta</button>
+      </form>
+
+      <section id="telaCadastroSucesso" aria-live="polite" hidden>
+        <h2>Conta criada com sucesso!</h2>
+        <p>Confira os dados da sua conta:</p>
+        <dl>
+          <div>
+            <dt>Nome</dt>
+            <dd id="cadSucessoNome"></dd>
+          </div>
+          <div>
+            <dt>Usuário</dt>
+            <dd id="cadSucessoUsuario"></dd>
+          </div>
+          <div>
+            <dt>Turma</dt>
+            <dd id="cadSucessoTurma"></dd>
+          </div>
+        </dl>
+        <button id="btnIrParaLogin" type="button">Ir para login</button>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="app.js"></script>
+    <script src="financapp.js"></script>
+  </body>
+</html>

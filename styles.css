@@ -1,0 +1,293 @@
+:root {
+  --bg: #f4f9f5;
+  --panel: #ffffff;
+  --panel-alt: #eef8f1;
+  --primary: #1f7a4d;
+  --primary-dark: #175f3d;
+  --secondary: #dfeee6;
+  --text: #1d2b22;
+  --muted: #557062;
+  --border: #dfeae3;
+  --success: #1e9b5d;
+  --danger: #d9534f;
+  --shadow: rgba(31, 122, 77, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #ecf7ef 0%, var(--bg) 100%);
+  color: var(--text);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+#telaAuth,
+#telaApp {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+#telaApp {
+  min-height: 100vh;
+}
+
+#telaAuth {
+  max-width: 520px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  padding-top: clamp(40px, 10vh, 100px);
+}
+
+#telaAuth h1 {
+  grid-column: 1 / -1;
+  margin: 0 0 8px;
+  text-align: center;
+  color: var(--primary-dark);
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+#formCadastro,
+#formLogin,
+#formLancamento,
+#telaCadastroSucesso {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 12px 28px var(--shadow);
+}
+
+#telaCadastroSucesso[hidden] {
+  display: none;
+}
+
+#formCadastro h2,
+#formLogin h2,
+#telaCadastroSucesso h2,
+#formLancamento h2,
+#telaApp h2 {
+  margin-top: 0;
+  color: var(--primary-dark);
+}
+
+#telaCadastroSucesso dl {
+  margin: 20px 0 0;
+}
+
+#telaCadastroSucesso dl div {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+#telaCadastroSucesso dt {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+#telaCadastroSucesso dd {
+  margin: 4px 0 0;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+#formCadastro[hidden],
+#formLogin[hidden] {
+  display: none;
+}
+
+#formCadastro input,
+#formLogin input,
+#formLancamento input,
+#formLancamento select,
+#cadMsg,
+#loginMsg {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #f9fcfa;
+  color: var(--text);
+}
+
+button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.auth-toggle {
+  margin-top: 8px;
+  padding: 8px;
+  background: transparent;
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.auth-toggle:hover {
+  background: var(--panel-alt);
+  transform: none;
+}
+
+#btnSair {
+  max-width: 180px;
+  margin-bottom: 18px;
+  background: #1b2a22;
+}
+
+#btnSair:hover {
+  background: #0d1a14;
+}
+
+#cadMsg,
+#loginMsg {
+  min-height: 22px;
+  background: transparent;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+#telaApp section {
+  margin-bottom: 24px;
+}
+
+#telaApp .perfil {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 18px var(--shadow);
+}
+
+#perfilFoto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--secondary);
+  border: 3px solid var(--secondary);
+}
+
+#perfilNome {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+#perfilTurma {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+#tituloSaldo {
+  margin-bottom: 0;
+}
+
+#saldoValor {
+  margin: 8px 0 0;
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+  font-weight: 700;
+}
+
+.positivo {
+  color: var(--success);
+}
+
+.negativo {
+  color: var(--danger);
+}
+
+#extratoContainer {
+  display: grid;
+  gap: 14px;
+}
+
+.lancamento-card {
+  display: grid;
+  gap: 10px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 8px 18px rgba(14, 38, 26, 0.04);
+}
+
+.lancamento-desc {
+  margin: 0;
+  font-weight: 700;
+}
+
+.lancamento-data {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.lancamento-valor {
+  font-weight: 700;
+}
+
+.receita {
+  color: var(--success);
+}
+
+.despesa {
+  color: var(--danger);
+}
+
+.lancamento-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-badge {
+  display: inline-block;
+  background: var(--secondary);
+  color: var(--primary-dark);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  #telaAuth,
+  #telaApp {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  #telaApp > section:first-of-type {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
